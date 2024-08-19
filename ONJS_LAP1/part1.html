@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Fundamentals Part 1</title>
+  </head>
+  <body>
+    <span>Mark's mass (kg): </span>
+    <input type="number" id="markWeight" />
+
+    <span>Mark's height (m): </span>
+    <input type="number" id="markHeight" />
+
+    <hr />
+    <span>John's mass (kg): </span>
+    <input type="number" id="johnWeight" />
+
+    <span>John's height (m): </span>
+    <input type="number" id="johnHeight" />
+
+    <br />
+    <button onclick="calculateBMI()">Calculate BMI</button>
+    <br />
+
+    <span>Mark's BMI: </span>
+    <span id="MarkBMI">.............................</span>
+    <br />
+    <span>John's BMI: </span>
+    <span id="JohnBMI">.............................</span>
+
+    <script>
+      function calculateBMI() {
+        const markWeight = parseFloat(
+          document.getElementById("markWeight").value
+        );
+        const markHeight = parseFloat(
+          document.getElementById("markHeight").value
+        );
+        const johnWeight = parseFloat(
+          document.getElementById("johnWeight").value
+        );
+        const johnHeight = parseFloat(
+          document.getElementById("johnHeight").value
+        );
+
+        const markBMI = (markWeight / markHeight ** 2);
+        const johnBMI = (johnWeight / johnHeight ** 2);
+
+        //const markBMI = (markWeight / markHeight ** 2).toFixed(2);
+        //const johnBMI = (johnWeight / johnHeight ** 2).toFixed(2);
+
+        document.getElementById("MarkBMI").textContent = markBMI;
+        document.getElementById("JohnBMI").textContent = johnBMI;
+
+        console.log(`Mark's BMI: ${markBMI}, John's BMI: ${johnBMI}`);
+
+        const markHigherBMI = parseFloat(markBMI) > parseFloat(johnBMI);
+        console.log(`Mark's BMI: ${markBMI}, John's BMI: ${johnBMI}`);
+        console.log(`Is Mark's BMI higher than John's? ${markHigherBMI}`);
+      }
+    </script>
+    <!-- Tạo biến Boolean 'markHigherBMI' chứa thông tin về liệu Mark có chỉ số BMI cao hơn John hay không. -->
+  </body>
+</html>
