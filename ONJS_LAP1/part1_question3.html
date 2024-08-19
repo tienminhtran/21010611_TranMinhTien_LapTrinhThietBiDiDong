@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Fundamentals Part 1 - Q3</title>
+  </head>
+
+  <body>
+    <i>JavaScript Fundamentals Part 1 - Q3</i>
+    <i>
+      <br />
+
+      let Dolphins = [96, 108, 89];
+      <br />
+      let Koalas = [88, 91, 110];
+      <br />
+      <span>Trung binh Dolphins: </span>
+      <span id="avgDolphins">.............................</span>
+      <br />
+      <span>Trung binh Koalas: </span>
+      <span id="avgKoalas">.............................</span>
+    </i>
+    <script>
+      let Dolphins = [96, 108, 89];
+
+      let sumDolphins = 0;
+      let avgDolphins = 0;
+      for (let i = 0; i < Dolphins.length; i++) {
+        sumDolphins = sumDolphins + Dolphins[i];
+        avgDolphins = sumDolphins / Dolphins.length;
+      }
+      console.log(avgDolphins);
+      //avgDolphins = document.getElementById("avgDolphins").textContent;
+
+      let Koalas = [88, 91, 110];
+      let sumKoalas = 0;
+      let avgKoalas = 0;
+      for (let j = 0; j < Koalas.length; j++) {
+        sumKoalas = sumKoalas + Koalas[j];
+        avgKoalas = sumKoalas / Koalas.length;
+        //avgKoalas = document.getElementById("avgKoalas").textContent;
+      }
+      console.log(avgKoalas);
+
+      // so sanh
+
+      if (avgDolphins > avgKoalas) {
+        console.log(`Dolphins win`);
+      } else if (avgDolphins < avgKoalas) {
+        console.log(`Koalas win `);
+      } else {
+        console.log(`Hoa `);
+      }
+
+      // 3. Data Bonus 1: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 123
+
+      let Dolphins_Bonus1 = [97, 112, 101];
+      let Koalas_Bonus1 = [109, 95, 123];
+
+      let sum_Dolphins_Bonus1 = 0;
+      let avg_Dolphins_Bonus1 = 0;
+      for (let i = 0; i < Dolphins_Bonus1.length; i++) {
+        sum_Dolphins_Bonus1 = sum_Dolphins_Bonus1 + Dolphins_Bonus1[i];
+        avg_Dolphins_Bonus1 = sum_Dolphins_Bonus1 / Dolphins_Bonus1.length;
+      }
+      console.log(avg_Dolphins_Bonus1);
+
+      let sum_Koalas_Bonus1 = 0;
+      let avg_Koalas_Bonus1 = 0;
+      for (let j = 0; j < Koalas_Bonus1.length; j++) {
+        sum_Koalas_Bonus1 = sum_Koalas_Bonus1 + Koalas_Bonus1[j];
+        avg_Koalas_Bonus1 = sum_Koalas_Bonus1 / Koalas_Bonus1.length;
+      }
+      console.log(avg_Koalas_Bonus1);
+
+      // so sanh
+      if (
+        avg_Dolphins_Bonus1 >= 100 &&
+        avg_Dolphins_Bonus1 > avg_Koalas_Bonus1
+      ) {
+        console.log(`Dolphins win`);
+      } else if (
+        avg_Koalas_Bonus1 >= 100 &&
+        avg_Dolphins_Bonus1 < avg_Koalas_Bonus1
+      ) {
+        console.log(`Koalas win `);
+      } else if (
+        avg_Dolphins_Bonus1 >= 100 &&
+        avg_Koalas_Bonus1 >= 100 &&
+        avg_Dolphins_Bonus1 === avg_Koalas_Bonus1
+      ) {
+        console.log(`Hoa `);
+      } else {
+        console.log(`Khong co ket qua `);
+      }
+
+      // 4. Data Bonus 2:
+      let Dolphins_Bonus2 = [97, 112, 101];
+      let Koalas_Bonus2 = [109, 95, 106];
+
+      let sum_Dolphins_Bonus2 = 0;
+      let avg_Dolphins_Bonus2 = 0;
+      for (let i = 0; i < Dolphins_Bonus2.length; i++) {
+        sum_Dolphins_Bonus2 = sum_Dolphins_Bonus2 + Dolphins_Bonus2[i];
+        avg_Dolphins_Bonus2 = sum_Dolphins_Bonus2 / Dolphins_Bonus2.length;
+      }
+      console.log(avg_Dolphins_Bonus2);
+
+      let sum_Koalas_Bonus2 = 0;
+      let avg_Koalas_Bonus2 = 0;
+      for (let j = 0; j < Koalas_Bonus2.length; j++) {
+        sum_Koalas_Bonus2 = sum_Koalas_Bonus2 + Koalas_Bonus2[j];
+        avg_Koalas_Bonus2 = sum_Koalas_Bonus2 / Koalas_Bonus2.length;
+      }
+      console.log(avg_Koalas_Bonus2);
+
+      // so sanh
+      if (
+        avg_Dolphins_Bonus2 >= 100 &&
+        avg_Dolphins_Bonus2 > avg_Koalas_Bonus2
+      ) {
+        console.log(`Dolphins win`);
+      } else if (
+        avg_Koalas_Bonus2 >= 100 &&
+        avg_Dolphins_Bonus2 < avg_Koalas_Bonus2
+      ) {
+        console.log(`Koalas win `);
+      } else if (
+        avg_Dolphins_Bonus2 >= 100 &&
+        avg_Koalas_Bonus2 >= 100 &&
+        avg_Dolphins_Bonus2 === avg_Koalas_Bonus2
+      ) {
+        console.log(`Hoa `);
+      } else {
+        console.log(`Khong co ket qua `);
+      }
+    </script>
+
+    <!-- trung binh moi doi -->
+
+    <!-- Data 1: Dolphins score 96, 108 and 89. Koalas score 88, 91 and 110
+    § Data Bonus 1: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 123
+    § Data Bonus 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106 -->
+  </body>
+</html>
