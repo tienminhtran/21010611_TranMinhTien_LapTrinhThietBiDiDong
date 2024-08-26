@@ -21,11 +21,9 @@
         tips.push(tip);
         totals.push(bills[i] + tip);
       }
-
       console.log("Bills:", bills);
       console.log("Tips:", tips);
       console.log("Totals:", totals);
-
       function calcAverage(arr) {
         let sum = 0;
         for (let i = 0; i < arr.length; i++) {
@@ -33,7 +31,6 @@
         }
         return sum / arr.length;
       }
-
       const averageTotal = calcAverage(totals);
       console.log("Average Total:", averageTotal);
     </script>

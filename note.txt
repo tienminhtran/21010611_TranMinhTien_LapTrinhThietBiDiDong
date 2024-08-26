@@ -1,0 +1,1 @@
+I. myfilter : điều kiệnvar a = [4,7,5]let newarr=[]Array.prototype.myfilter = funtion(mun){for( let index = 0; index < this.lenght;....)	newarr.push(this[index])}var fn = a.myfilter(7)..log(fn)

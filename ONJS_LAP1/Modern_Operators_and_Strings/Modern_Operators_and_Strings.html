@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Create one player array for each team (variables 'players1' and 'players2
+      const game = {
+        team1: "Bayern Munich",
+        team2: "Borrussia Dortmund",
+        players: [
+          [
+            "Neuer",
+            "Pavard",
+            "Martinez",
+            "Alaba",
+            "Davies",
+            "Kimmich",
+            "Goretzka",
+            "Coman",
+            "Muller",
+            "Gnarby",
+            "Lewandowski",
+          ],
+          [
+            "Burki",
+            "Schulz",
+            "Hummels",
+            "Akanji",
+            "Hakimi",
+            "Weigl",
+            "Witsel",
+            "Hazard",
+            "Brandt",
+            "Sancho",
+            "Gotze",
+          ],
+        ],
+        score: "4:0",
+        scored: ["Lewandowski", "Gnarby", "Lewandowski", "Hummels"],
+        date: "Nov 9th, 2037",
+        odds: {
+          team1: 1.33,
+          x: 3.25,
+          team2: 6.5,
+        },
+      };
+
+      // The first player in any player array is the goalkeeper and the others are field
+      //players. For Bayern Munich (team 1) create one variable ('gk') with the
+      //goalkeeper's name, and one array ('fieldPlayers') with all the remaining 10
+      //field players
+      const [players1, players2] = game.players;
+      // chứa tên thủ môn và các cầu thủ khác gr team 1
+      const [gk, ...fieldPlayers] = players1;
+      console.log(gk, fieldPlayers);
+
+      //  'allPlayers' mảng lưu all players của 2 team
+      const allPlayers = [players1, players2];
+      console.log(allPlayers);
+
+      // 'players1Final' mảng lưu all players của team 1 và thêm thêm 3 cầu thủ mới
+      const players1Final = [...players1, "Thiago", "Coutinho", "Perisic"];
+      console.log(players1Final);
+
+      //
+    </script>
+  </body>
+</html>
