@@ -1,1 +1,28 @@
-I. myfilter : điều kiệnvar a = [4,7,5]let newarr=[]Array.prototype.myfilter = funtion(mun){for( let index = 0; index < this.lenght;....)	newarr.push(this[index])}var fn = a.myfilter(7)..log(fn)
+I. 
+myfilter : điều kiện
+
+var a = [4,7,5]
+
+let newarr=[]
+Array.prototype.myfilter = funtion(mun){
+for( let index = 0; index < this.lenght;....)
+	newarr.push(this[index])
+}
+var fn = a.myfilter(7)
+..log(fn)
+
+------------------
+<br />Phương every() thức Arrayinstances kiểm tra xem tất cả các phần tử trong mảng
+    có vượt qua bài kiểm tra được triển khai bởi hàm được cung cấp hay không. Nó
+    trả về giá trị Boolean.
+    
+    <br />Array.prototype.every():
+    <br />Kiểm tra xem tất cả các phần tử trong mảng có vượt qua bài kiểm tra được triển khai bởi hàm được cung cấp hay không. Nó trả về giá trị Boolean.
+    <br />Cú pháp: arr.every(callback(element[, index[, array]])[, thisArg])
+    <br />callback: Hàm để kiểm tra cho từng phần tử, nhận ba tham số:
+    <br /> element: Phần tử hiện tại đang được xử lý trong mảng.
+    <br />index (Optional): Chỉ mục của phần tử hiện tại đang được xử lý trong mảng.
+    <br /> array (Optional): Mảng mà every()được gọi.
+    <br />thisArg (Optional): Một giá trị để sử dụng như this khi thực thi hàm callback.
+
+    </div>
