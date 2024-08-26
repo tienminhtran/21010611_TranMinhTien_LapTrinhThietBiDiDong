@@ -26,3 +26,8 @@ var fn = a.myfilter(7)
     <br />thisArg (Optional): Một giá trị để sử dụng như this khi thực thi hàm callback.
 
     </div>
+
+	EX:
+	element >= 10; 
+	element.length >= 10; // độ dài kích thước
+	
