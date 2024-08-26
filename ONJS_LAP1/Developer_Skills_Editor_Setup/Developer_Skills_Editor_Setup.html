@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function printForecast(arr) {
+        let forecastString = "... ";
+        for (let i = 0; i < arr.length; i++) {
+          forecastString = forecastString + `${arr[i]}ºC in ${i + 1} days ... `;
+        }
+        console.log(forecastString);
+      }
+
+      const data1 = [17, 21, 23];
+      printForecast(data1); 
+  
+      const data2 = [12, 5, -5, 0, 4];
+      printForecast(data2); 
+    </script>
+  </body>
+</html>
