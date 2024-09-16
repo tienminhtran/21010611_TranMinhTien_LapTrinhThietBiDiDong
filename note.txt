@@ -1,4 +1,4 @@
-I. 
+﻿I. 
 myfilter : điều kiện
 
 var a = [4,7,5]
@@ -31,3 +31,61 @@ var fn = a.myfilter(7)
 	element >= 10; 
 	element.length >= 10; // độ dài kích thước
 	
+
+
+
+react native dev
+tientot36@gmail.com (minhtien21010611)
+04112003
+
+------Flexbox 
+https://flexboxfroggy.com/#vi
+---------------------------------
+LUÔN CHIA THEO CỘT NHA			|
+---------------------------------
+Web defaut row 
+
+	dòng 	hàng : justify-content
+			cột:  alignItems
+
+ 
+ 
+flex-direction: column
+
+
+	cột: hàng alignItems
+			cột: justify-content
+
+justify-content; alignItems(
+space-betweenPhân bổ đều khoảng cách giữa các con trên trục chính của thùng chứa, phân bổ khoảng cách còn lại giữa các con.
+
+space-aroundPhân bổ đều các con trên trục chính của thùng chứa, phân bổ không gian còn lại xung quanh các con. So với space-between, sử dụng space-aroundsẽ dẫn đến việc phân bổ không gian đến đầu của con đầu tiên và cuối của con cuối cùng.
+
+space-evenlyPhân bổ đều các con trong hộp căn chỉnh dọc theo trục chính. Khoảng cách giữa mỗi cặp mục liền kề, cạnh bắt đầu chính và mục đầu tiên, và cạnh kết thúc chính và mục cuối cùng, đều giống hệt nhau.
+)
+---------------
+Giúp đỡ những chú ếch tìm thấy các lá bông súng được sắp xếp theo hàng dọc sử dụng flex-direction. Từ thuộc tính CSS này xác định hướng hạng mục được đặt trong hộp chứa, và chấp nhận các giá trị sau:
+
+row: Các hạng mục được đặt cùng hướng với hướng của từ trong văn bản.
+row-reverse: Các hạng mục được đặt ngược hướng với hướng của từ trong văn bản.
+column: Các hạng mục được đặt từ trên xuống dưới.
+column-reverse: Các hạng mục được đặt từ dưới lên trên.
+
+ align-items: flex-start; 
+ justify-content: flex-end;
+ 
+ a
+ 
+ 
+ 
+ 
+--<View> tương ứng thẻ div
+ flex: 1, // chia 1 phần
+  flex: 2 phần
+  
+  npm install --legacy-peer-deps
+
+  //npm install -g expo-cli
+  npx create-expo-app demo_app --template expo-template-blank-typescript
+  
+  npm start

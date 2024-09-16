@@ -11,9 +11,9 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="AppPage1">
-        {/* <Stack.Screen name="AppPage1" component={AppPage1} />
-        <Stack.Screen name="AppPage2" component={AppPage2} /> */}
-        <Stack.Screen name="AppPage3" component={AppPage3} />
+        <Stack.Screen name="AppPage1" component={AppPage1} />
+        {/* <Stack.Screen name="AppPage2" component={AppPage2} /> */}
+        {/* <Stack.Screen name="AppPage3" component={AppPage3} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );
