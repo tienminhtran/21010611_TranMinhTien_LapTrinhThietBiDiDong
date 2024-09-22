@@ -10,9 +10,13 @@ If you're having problems, you can tweet to us [@expo](https://twitter.com/expo)
 
 Snack is Open Source. You can find the code on the [GitHub repo](https://github.com/expo/snack).
 
+## LINK FIGMA: https://www.figma.com/design/hcmRwSVUlSBTNvABIFDyaL/Lab_02?node-id=64-2&node-type=frame&t=BzQrWBxq32UfMiU7-0
+
 Khởi chạy CMD trong thư mực chứa code: chạy   `npm start`
- `npx create-expo-app demo_app --template expo-template-blank-typescript`
- 
-   `npx expo install react-native-web react-dom @expo/metro-runtime`
+
+
+`npx create-expo-app demo_app --template expo-template-blank-typescript`
+
+`npx expo install react-native-web react-dom @expo/metro-runtime`
 
 
