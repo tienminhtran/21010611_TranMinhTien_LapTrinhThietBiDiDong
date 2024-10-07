@@ -22,6 +22,7 @@ https://rapidapi.com/guides/fetch-api-react-native
 		npx expo install react-native-web react-dom @expo/metro-runtime
 		npm install react-native-elements
 		npm install @react-navigation/native-stack
+  		@react-navigation/stack
 		npm install @react-navigation/native
  
   	npm start
