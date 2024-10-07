@@ -105,6 +105,12 @@ https://rapidapi.com/guides/fetch-api-react-native
   
     	npx expo install react-native-web react-dom @expo/metro-runtime
 
-    	
+
+
+## LAB 5 REACT 
+		https://medium.com/@bhairabpatra.iitd/crud-create-read-update-delete-application-in-react-566bf229aaee
+
+https://www.figma.com/design/bJ1zR7MlDRDOfTNTnyE7F2/Lab_07_a?node-id=0-...EZbXec-0
+
   
   
