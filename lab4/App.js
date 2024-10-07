@@ -13,7 +13,7 @@ const imageMap = {
 
 const Item = ({ item }) => (
   <View style={styles.itemContainer}>
-    <Image source={imageMap[item.id]} style={styles.itemImage} />
+    <Image source={{uri:item.img}} style={styles.itemImage} />
     <View style={styles.listitemContainer}>
       <Text style={styles.itemText}>{item.nameShop}</Text>
       <Text style={styles.messageShop}>{item.shop}</Text>
