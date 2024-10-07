@@ -14,19 +14,22 @@ https://rapidapi.com/guides/fetch-api-react-native
   npm audit fix --force
 
   //npm install -g expo-cli
-  npx create-expo-app demo_app --template expo-template-blank-typescript
-  npm start
+  
+  	npx create-expo-app demo_app --template expo-template-blank-typescript
+ 	 
+   	npm start
   
 		npx expo install react-native-web react-dom @expo/metro-runtime
 		npm install react-native-elements
 		npm install @react-navigation/native-stack
 		npm install @react-navigation/native
-  npm start
+ 
+  	npm start
   
   
-  npx expo install @expo/metro-runtime
+ 	 npx expo install @expo/metro-runtime
 
-npm install react-native-elements
+	npm install react-native-elements
 
 
 
@@ -49,28 +52,46 @@ npm install react-native-elements
   
   1 - Gỡ cài đặt expo-cli:
 
-npm uninstall --global expo-cli
+
+	npm uninstall --global expo-cli
+
+
 2 - Cài đặt Expo CLI lên phiên bản mới nhất:
 
-npm install --global expo-cli
+
+	npm install --global expo-cli
+
+
 3 - Tạo một dự án Expo TypeScript mới:
 
-npx create-expo-app demo_app --template expo-template-blank-typescript
+	npx create-expo-app demo_app --template expo-template-blank-typescript
+
+
 4 - Điều hướng đến Dự án của bạn:
 
-cd demo_app
+
+	cd demo_app
+
+
 5 - Cài đặt react-native-web@~0.19.6:
 
-npm install react-native-web@~0.19.6
+
+	npm install react-native-web@~0.19.6
+
+
 6 - Cài đặt react-dom@18.2.0 :
 
-npm install react-dom@18.2.0
+	npm install react-dom@18.2.0
+
+
 7 - Cài đặt @expo/webpack-config@^19.0.0:
 
-npm install @expo/webpack-config@^19.0.0
+	npm install @expo/webpack-config@^19.0.0
+
+
 8 - Chạy dự án:
 
-npm run web
+	npm run web
   
   
   
