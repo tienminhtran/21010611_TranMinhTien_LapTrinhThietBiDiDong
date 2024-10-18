@@ -113,5 +113,14 @@ https://rapidapi.com/guides/fetch-api-react-native
 
 https://www.figma.com/design/bJ1zR7MlDRDOfTNTnyE7F2/Lab_07_a?node-id=0-...EZbXec-0
 
+
+## cài ở máy trường
+
+#Bước 1
+	
+ 	npm install
+#Bước 2
+
+	npm start
   
   
