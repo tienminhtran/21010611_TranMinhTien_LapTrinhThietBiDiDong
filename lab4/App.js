@@ -164,7 +164,7 @@ type ItemData = {
   img: string;
 };
 
-const DATA: ItemData[] = [
+const DATA = [
   {
     id: 's1',
     nameShop: 'Cá Nấu Lẩu, Nấu Mì Mini',

@@ -1,5 +1,5 @@
 {
-  "name": "lab5_react",
+  "name": "gk_t2_4_6",
   "version": "1.0.0",
   "main": "expo/AppEntry.js",
   "scripts": {
@@ -11,9 +11,8 @@
   "dependencies": {
     "@expo/metro-runtime": "~3.2.3",
     "@react-navigation/native": "^6.1.18",
-    "@react-navigation/native-stack": "^6.11.0",
     "@react-navigation/stack": "^6.4.1",
-    "expo": "~51.0.37",
+    "expo": "~51.0.28",
     "expo-status-bar": "~1.12.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -23,7 +22,7 @@
   "devDependencies": {
     "@babel/core": "^7.20.0",
     "@types/react": "~18.2.45",
-    "typescript": "~5.3.3"
+    "typescript": "^5.1.3"
   },
   "private": true
 }
