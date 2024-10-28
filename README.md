@@ -27,18 +27,20 @@ https://rapidapi.com/guides/fetch-api-react-native
 ## cài các thư viện
 ### tv 1
 	npm install @react-navigation/native-stack
-### tv 1
+### tv 2
 	
- 	@react-navigation/stack
-### tv 1
+ 	npm install @react-navigation/stack
+### tv 3
 
 	npm install @react-navigation/native
 
  ###
   	npm start
+  ###
+ 
   
-  
- 	 npx expo install @expo/metro-runtime
+ 	 npm expo install @expo/metro-runtime
+ ###
 
 	npm install react-native-elements
 
