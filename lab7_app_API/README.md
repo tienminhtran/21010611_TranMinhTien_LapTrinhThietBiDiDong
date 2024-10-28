@@ -1,117 +1,44 @@
-# Sample Snack app Tiến
-All lab Andorid - IUH 
+# Project Name - User Interaction Screens and API Integration
 
+Dự án này bao gồm các API và màn hình giao diện người dùng nhằm thực hiện các yêu cầu tương tác và xử lý dữ liệu từ người dùng.
 
-# LAB 4: https://reactnative.dev/docs/flatlist
+## Mục lục
 
+- [Yêu cầu cài đặt](#yêu-cầu-cài-đặt)
+- [Hướng dẫn cài đặt](#hướng-dẫn-cài-đặt)
+- [Cấu hình API](#cấu-hình-api)
+- [Mô tả các câu hỏi và yêu cầu chức năng](#mô-tả-các-câu-hỏi-và-yêu-cầu-chức-năng)
+- [Chi tiết các màn hình](#chi-tiết-các-màn-hình)
+- [Thông tin bổ sung](#thông-tin-bổ-sung)
 
-# vao trang #mockapi ->  tao 1 list cac api
+# Mô tả các câu hỏi và yêu cầu chức năng
 
-https://rapidapi.com/guides/fetch-api-react-native
+## Câu 01: Thiết lập Màn Hình Screen_01
+## Tạo giao diện người dùng (2 lần commit)
+## Commit 1: feat: tạo giao diện cho Screen_01
+## Commit 2: feat: thêm chức năng cho nút GET STARTED
+## Chi tiết:
+## Màn hình Screen_01 gồm một ô nhập tên và nút GET STARTED.
+## Khi nhập tên và nhấn GET STARTED, sẽ chuyển sang Screen_02, hiển thị lời chào "Hi" kèm tên.
+## Câu 02: Thiết lập Màn Hình Screen_02
+## Cấu trúc commit cho giao diện và chức năng (5 lần commit)
 
-  npm install --legacy-peer-deps
-  npm fund
-  npm audit fix --force
+Commit 1: feat: tạo giao diện cho Screen_02
+Commit 2: feat: hiển thị danh sách từ array (a)
+Commit 3: feat: chức năng tìm kiếm (b)
+Commit 4: feat: thêm chức năng tạo công việc mới (c)
+Commit 5: feat: chỉnh sửa công việc (d)
+Chi tiết:
 
-  //npm install -g expo-cli
-  
-  	npx create-expo-app demo_app --template expo-template-blank-typescript
- 	 
-   	npm start
-  
-		npx expo install react-native-web react-dom @expo/metro-runtime
-		npm install react-native-elements
-		npm install @react-navigation/native-stack
-  		@react-navigation/stack
-		npm install @react-navigation/native
- 
-  	npm start
-  
-  
- 	 npx expo install @expo/metro-runtime
+a. Khi ứng dụng khởi chạy, hiển thị danh sách công việc từ mảng có sẵn trên màn hình Screen_02.
+b. Chức năng tìm kiếm: khi người dùng nhập từ khóa vào ô Search, danh sách công việc sẽ lọc và hiển thị các mục liên quan.
+c. Nhấn vào biểu tượng +: mở màn hình Screen_03 để thêm công việc mới. Nhập nội dung công việc và nhấn Finish để thêm vào danh sách trên Screen_02.
+d. Nhấn biểu tượng Edit: hiển thị Screen_03 với nội dung công việc hiện tại, tiêu đề đổi thành "EDIT YOUR JOB". Sau khi chỉnh sửa, nhấn Finish để cập nhật công việc trong danh sách.
+Chi tiết các màn hình
+Screen_01: Màn hình ban đầu với ô nhập tên và nút GET STARTED.
+Screen_02: Màn hình chính hiển thị danh sách công việc, có chức năng tìm kiếm, thêm và chỉnh sửa công việc.
+Screen_03: Màn hình thêm hoặc chỉnh sửa công việc, có thể nhập nội dung mới hoặc cập nhật nội dung đã có.
+Thông tin bổ sung
+Để biết thêm chi tiết về việc sử dụng và cấu hình các API, vui lòng tham khảo tài liệu API chi tiết.
 
-	npm install react-native-elements
-
-
-
-
-  NẾU XUẤT HIỆN LỖI
-  WARNING: The legacy expo-cli does not support Node +17. Migrate to the new local Expo CLI:https://blog.expo.dev/the-new-expo-cli-f4250d8e3421.
-┌───────────────────────────────────────────────────────────────────────────┐
-│                                                                           │
-│   The global expo-cli package has been deprecated.                        │
-│                                                                           │
-│   The new Expo CLI is now bundled in your project in the expo package.    │
-│   Learn more: https://blog.expo.dev/the-new-expo-cli-f4250d8e3421.        │
-│                                                                           │
-│   To use the local CLI instead (recommended in SDK 46 and higher), run:   │
-│   › npx expo <command>                                                    │
-───────────────────────────────────────────────────────────────────────────┐                                                         
-  https://stackoverflow.com/questions/75314418/the-legacy-expo-cli-does-not-support-node-17
-  
-  
-  
-  1 - Gỡ cài đặt expo-cli:
-
-
-	npm uninstall --global expo-cli
-
-
-2 - Cài đặt Expo CLI lên phiên bản mới nhất:
-
-
-	npm install --global expo-cli
-
-
-3 - Tạo một dự án Expo TypeScript mới:
-
-	npx create-expo-app demo_app --template expo-template-blank-typescript
-
-
-4 - Điều hướng đến Dự án của bạn:
-
-
-	cd demo_app
-
-
-5 - Cài đặt react-native-web@~0.19.6:
-
-
-	npm install react-native-web@~0.19.6
-
-
-6 - Cài đặt react-dom@18.2.0 :
-
-	npm install react-dom@18.2.0
-
-
-7 - Cài đặt @expo/webpack-config@^19.0.0:
-
-	npm install @expo/webpack-config@^19.0.0
-
-
-8 - Chạy dự án:
-
-	npm run web
-
- ## CÁCH RUN PROJECT
- 	
-  #Steep 1	
-   	
-    	npm install
-   	Dùng để install thư viện
-
- 	
-  #Steep 2
-  
-    	npx expo install react-native-web react-dom @expo/metro-runtime
-
-
-
-## LAB 5 REACT 
-		https://medium.com/@bhairabpatra.iitd/crud-create-read-update-delete-application-in-react-566bf229aaee
-
-https://www.figma.com/design/bJ1zR7MlDRDOfTNTnyE7F2/Lab_07_a?node-id=0-...EZbXec-0
-
-  
-  
+> Lưu ý: Thay thế `link-to-api-docs](https://671e74d61dfc429919825dfc.mockapi.io/taks` bằng đường dẫn thực tế đến tài liệu API nếu có.
