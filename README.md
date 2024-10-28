@@ -14,17 +14,27 @@ https://rapidapi.com/guides/fetch-api-react-native
   npm audit fix --force
 
   //npm install -g expo-cli
-  
-  	npx create-expo-app demo_app --template expo-template-blank-typescript
- 	 
+# tạo project
+## cách 1
+	npx create-expo-app demo_app --template expo-template-blank-typescript
+## cách 2
+ 	npm create-expo-app demo_app --template expo-template-blank-typescript
+
    	npm start
   
 		npx expo install react-native-web react-dom @expo/metro-runtime
 		npm install react-native-elements
-		npm install @react-navigation/native-stack
-  		@react-navigation/stack
-		npm install @react-navigation/native
- 
+## cài các thư viện
+### tv 1
+	npm install @react-navigation/native-stack
+### tv 1
+	
+ 	@react-navigation/stack
+### tv 1
+
+	npm install @react-navigation/native
+
+ ###
   	npm start
   
   
