@@ -1,83 +1,91 @@
-import React, { useState, useEffect } from 'react';
-import { Text, SafeAreaView, StyleSheet, View, Image, FlatList, Button } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View, SafeAreaView,Image, TextInput,FlatList, ScrollView } from 'react-native';
+import React,{useEffect, useState} from 'react';
+import { Rating } from 'react-native-elements';
 
-const imageMap = {
-  's1': require('./assets/s1.png'),
-  's2': require('./assets/s2.png'),
-  's3': require('./assets/s3.png'),
-  's4': require('./assets/s4.png'),
-  's5': require('./assets/s5.png'),
-  's6': require('./assets/s5.png'),
-  's7': require('./assets/s5.png'),
-};
+// render item list
+const Item = ({title, price, discount, image, rating, quanlityRating}) => (
+  <View style={styles.searchItem}>
+        <Image source={{uri: image}} style={{width: '100%', height: 100}}/>
 
-const Item = ({ item }) => (
-  <View style={styles.itemContainer}>
-    <Image source={{uri:item.img}} style={styles.itemImage} />
-    <View style={styles.listitemContainer}>
-      <Text style={styles.itemText}>{item.nameShop}</Text>
-      <Text style={styles.messageShop}>{item.shop}</Text>
-    </View>
-    <View style={styles.buttonContainer}>
-      <Button 
-        title="Chat" 
-        color="#F31111" 
-        onPress={() => alert(`Chat with ${item.nameShop}`)} 
-      />
-    </View>
+        <View style={{paddingHorizontal:10, paddingTop:10}}>
+          <Text style={styles.searchItemTitle}>{title}</Text>
+
+          <View style={{flexDirection:'row'}}>
+            <Rating style={{backgroundColor:'#E5E5E5', marginRight:10}} imageSize={15} readonly startingValue={rating}/>        
+            <Text style={styles.textQuanlityRate}>({quanlityRating})</Text>     
+          </View>
+
+          <View style={styles.viewPrice}>
+            <Text style={styles.price}>{price}</Text>
+            <Text style={styles.discount}>{discount}</Text>
+          </View>
+        </View>
+        
   </View>
 );
 
 export default function App() {
-  const [data, setData] = useState([]);  // State không cần kiểu ItemData[]
+
+  const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('https://66fa5778afc569e13a9b5421.mockapi.io/api/lab4/food')
-      .then(response => response.json())
-      .then(json => {
-        setData(json);
-        setLoading(false);
+    fetch('https://671e74d61dfc429919825dfc.mockapi.io/product_lab4_react')
+      .then((response) => response.json()) 
+      .then((json) => {
+        setData(json); 
+        setLoading(false); 
       })
-      .catch(error => {
+      .catch((error) => {
         console.error(error);
         setLoading(false);
       });
   }, []);
 
-  if (loading) {
-    return (
-      <SafeAreaView style={styles.container}>
-        <Text>Loading...</Text>
-      </SafeAreaView>
-    );
-  }
-
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.header}>
-        <Image 
-          source={require('./assets/ant-design_arrow-left-outlined.png')}
-          style={styles.image}
-        />
-        <Text style={styles.headerText}>Chat</Text>
-        <Image 
-          source={require('./assets/bi_cart-check.png')}
-          style={styles.image}
-        />
+
+      <View style={styles.search}>
+        {/* header-nav */}
+        <View style={styles.navBar}>
+          <Image source={require('./assets/ant-design_arrow-left-outlined.png')} style = {{resizeMode:'cover'}}/>
+
+          <View style={styles.inputSearch}>
+            <Image source={require('./assets/whh_magnifier.png')} />
+            <TextInput placeholder="Dây cáp USB" style={styles.textInput}/>
+          </View>
+
+          <View>
+            <Image source={require('./assets/bi_cart-check.png')} style = {{resizeMode:'cover'}}/>
+            <View style={styles.iconRed}></View>
+          </View>
+
+          <Image source={require('./assets/Group 2....png')} style = {{resizeMode:'cover'}}/>
+        </View>
+      
+      {/* display product */}
+        <View style={{ flex: 1 }}>
+          <FlatList
+            data={data}
+            renderItem={({item}) => <Item title={item.title} price={item.price} discount={item.discount} image={item.image} rating={item.rating} quanlityRating={item.quanlityRating} />}
+            keyExtractor={item => item.id}
+            scrollEnabled={true}
+            numColumns={2}
+          />
+        </View>
+  
       </View>
-      <View style={styles.messageContainer}>
-        <Text style={styles.messageText}>
-          Bạn có thắc mắc với sản phẩm vừa xem đừng ngại chát với shop!
-        </Text>
+
+      {/* footer */}
+      <View style={{justifyContent:'flex-end'}}>
+            <View style={styles.navBar}>
+              <Image source={require('./assets/menu.png')} style = {{resizeMode:'cover'}}/>
+              <Image source={require('./assets/home.png')} style = {{resizeMode:'cover'}}/>
+              <Image source={require('./assets/back.png')} style = {{resizeMode:'cover'}}/>
+            </View>
       </View>
-      <View style={styles.listContainer}>
-        <FlatList
-          data={data}
-          renderItem={({ item }) => <Item item={item} />}
-          keyExtractor={(item) => item.id}
-        />
-      </View>
+      <StatusBar style="auto" />
     </SafeAreaView>
   );
 }
@@ -85,255 +93,50 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ecf0f1',
-    padding: 8,
+    backgroundColor:'#E5E5E5',
+    marginTop: 40,
   },
-  header: {
-    flex: 1,
-    backgroundColor: '#1BA9FF',
+  search:{
+    flex:1,
+  },
+  navBar: {
+    flexDirection:'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    flexDirection: 'row',
-    paddingHorizontal: 16,
+    backgroundColor:'#1BA9FF',
+    height: 42,
+    paddingHorizontal: 15,
   },
-  headerText: {
-    color: '#fff',
-    fontSize: 24,
-    fontWeight: 'bold',
-  },
-  messageContainer: {
-    flex: 1,
-    justifyContent: 'center',
+  inputSearch:{
+    flexDirection:'row',
     alignItems: 'center',
+    backgroundColor:'white',
+    width: '65%',
+    height: 30,
+    borderRadius: 5,
+    paddingLeft: 10,
   },
-  listContainer: {
-    flex: 8,
+  textInput: {
+    width: '90%',
+    height: 30,
+    paddingLeft: 10,
   },
-  listitemContainer: {
-    flex: 1,
-    paddingLeft: 8,
-  },
-  messageText: {
-    margin: 24,
-    fontSize: 15,
-    textAlign: 'center',
-  },
-  messageShop: {
-    fontSize: 15,
-    color: 'red',
-  },
-  itemContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginVertical: 8,
-    padding: 8,
+  iconRed:{width:17, height:17, backgroundColor:'#E93838', position:'absolute', left:10, top:-6, borderRadius: 15},
+  searchItem : {
+    width: '48%',
+    borderRadius: 10,
     backgroundColor: '#fff',
-    borderRadius: 8,
-    elevation: 2,
+    padding:10,
+    margin: 5,
   },
-  itemImage: {
-    width: 94,
-    height: 94,
-    marginRight: 16,
-  },
-  itemText: {
-    fontSize: 16,
-  },
-  image: {
-    width: 24,
-    height: 24,
-  },
-  buttonContainer: {
-    backgroundColor: '#F31111',
-    borderRadius: 5, 
-  },
-});
-
-
-
-/*
-import React, { useState, useEffect } from 'react';
-
-import { Text, SafeAreaView, StyleSheet, View, Image, FlatList, Button } from 'react-native';
-
-type ItemData = {
-  id: string;
-  nameShop: string;
-  shop: string;
-  img: string;
-};
-
-const DATA = [
-  {
-    id: 's1',
-    nameShop: 'Cá Nấu Lẩu, Nấu Mì Mini',
-    shop: 'Shop Devang',
-    img: 's1.png',
-  },
-  {
-    id: 's2',
-    nameShop: 'Bánh Mì Thịt Nướng',
-    shop: 'Shop Minh Long',
-    img: 's2.png',
-  },
-  {
-    id: 's3',
-    nameShop: 'Mì Quảng',
-    shop: 'Shop Food',
-    img: 's3.png',
-  },
-  {
-    id: 's4',
-    nameShop: 'Bún Chả Hà Nội',
-    shop: 'Shop ABC',
-    img: 's4.png',
-  },
-  {
-    id: 's5',
-    nameShop: 'Phở Bò',
-    shop: 'Shop Thu Ha',
-    img: 's5.png',
-  },
-  {
-    id: 's6',
-    nameShop: 'Phở Bò',
-    shop: 'Shop Thu Ha',
-    img: 's5.png',
-  },
-  {
-    id: 's7',
-    nameShop: 'Phở Bò',
-    shop: 'Shop Thu Ha',
-    img: 's5.png',
-  },
-];
-
-const imageMap = {
-  's1': require('./assets/s1.png'),
-  's2': require('./assets/s2.png'),
-  's3': require('./assets/s3.png'),
-  's4': require('./assets/s4.png'),
-  's5': require('./assets/s5.png'),
-  's6': require('./assets/s5.png'),
-  's7': require('./assets/s5.png'),
-};
-
-const Item = ({ item }: { item: ItemData }) => (
-  <View style={styles.itemContainer}>
-    <Image source={imageMap[item.id]} style={styles.itemImage} />
-    <View style={styles.listitemContainer}>
-      <Text style={styles.itemText}>{item.nameShop}</Text>
-      <Text style={styles.messageShop}>{item.shop}</Text>
-    </View>
-    <View style={styles.buttonContainer}>
-      <Button 
-        title="Chat" 
-        color="#F31111" 
-        onPress={() => alert(`Chat with ${item.nameShop}`)} 
-      />
-    </View>
-  </View>
-);
-
-export default function App() {
-  // API
-
-
-  return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.header}>
-        <Image 
-          source={require('./assets/ant-design_arrow-left-outlined.png')}
-          style={styles.image}
-        />
-        <Text style={styles.headerText}>Chat</Text>
-        <Image 
-          source={require('./assets/bi_cart-check.png')}
-          style={styles.image}
-        />
-      </View>
-      <View style={styles.messageContainer}>
-        <Text style={styles.messageText}>
-          Bạn có thắc mắc với sản phẩm vừa xem đừng ngại chát với shop!
-        </Text>
-      </View>
-      <View style={styles.listContainer}>
-        <FlatList
-          data={DATA}
-          renderItem={Item}
-          keyExtractor={(item) => item.id}
-        />
-      </View>
-    </SafeAreaView>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#ecf0f1',
-    padding: 8,
-  },
-  header: {
-    flex: 1,
-    backgroundColor: '#1BA9FF',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    flexDirection: 'row',
-    paddingHorizontal: 16,
-  },
-  headerText: {
-    color: '#fff',
-    fontSize: 24,
-    fontWeight: 'bold',
-  },
-  messageContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  listContainer: {
-    flex: 8,
-  },
-  listitemContainer: {
-    flex: 1,
-    paddingLeft: 8,
-  },
-  messageText: {
-    margin: 24,
+  searchItemTitle:{
     fontSize: 15,
-    textAlign: 'center',
+    color: '#00000',
+    marginBottom: 10,
   },
-  messageShop: {
-    fontSize: 15,
-    color: 'red',
-  },
-  itemContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginVertical: 8,
-    padding: 8,
-    backgroundColor: '#fff',
-    borderRadius: 8,
-    elevation: 2,
-  },
-  itemImage: {
-    width: 94,
-    height: 94,
-    marginRight: 16,
-  },
-  itemText: {
-    fontSize: 16,
-  },
-  image: {
-    width: 24,
-    height: 24,
-  },
-  buttonContainer: {
-    backgroundColor: '#F31111',
-    borderRadius: 5, 
-  },
+  textQuanlityRate: { fontSize: 12, color: 'black', fontWeight: 'bold' },
+  viewPrice: {flexDirection:'row', alignItems:'center', marginVertical:10},
+  price:{fontFamily: 'Roboto',fontSize: 18,fontWeight: 'bold',lineHeight: 21.09, marginRight:25},
+  discount:{fontFamily: 'Roboto',fontSize: 15,fontWeight: 'bold',lineHeight: 17.58, color:'#b5b5b5', textDecorationLine:'line-through'}
+
 });
-*/
