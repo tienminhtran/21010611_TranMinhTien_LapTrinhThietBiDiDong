@@ -7,3 +7,7 @@
 # INSTALL With npm:
 
 	npm install redux-api --save
+
+ #
+
+  	npm install @reduxjs/toolkit react-redux
