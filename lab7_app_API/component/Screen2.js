@@ -2,7 +2,6 @@
 import React, { useState, useCallback } from 'react';
 import { View, SafeAreaView, Image, TextInput, FlatList, TouchableOpacity, StyleSheet, Text } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
-import Task from './Task';
 
 const Screen2 = ({ navigation, route }) => {
   const [data, setData] = useState([]);

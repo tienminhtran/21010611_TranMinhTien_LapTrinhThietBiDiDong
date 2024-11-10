@@ -9,7 +9,7 @@ const Screen1 = ({ navigation }) => {
         <SafeAreaView style={styles.container}>
             {/* View image notebook */}
             <View style={styles.image}>
-                <Image source={require('../assets/Image95.png')} style={styles.imageStyle} />
+                <Image source={require('../assets/Image 95.png')} style={styles.imageStyle} />
             </View>
 
             {/* View body */}
