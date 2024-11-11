@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
 
-const Item1 = ({ img, name, price }) => (
+const DanhMuc = ({ img, name, price }) => (
   <View style={styles.container}>
     <View style={styles.card}>
       <Image style={styles.heartIcon} source={require('../assets/heart.png')} />
@@ -60,4 +60,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Item1;
+export default DanhMuc;

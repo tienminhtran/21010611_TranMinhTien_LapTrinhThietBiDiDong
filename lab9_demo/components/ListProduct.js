@@ -9,7 +9,7 @@ import {
   Image,
 } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
-import Item1 from './Item1';
+import DanhMuc from './DanhMuc';
 import { fetchBikes } from './features/bikes/bikesSlice';
 
 const ListProduct = ({ navigation }) => {
