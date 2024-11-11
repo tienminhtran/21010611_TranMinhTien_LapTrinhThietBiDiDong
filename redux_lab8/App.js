@@ -1,58 +1,39 @@
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import TaskManagementScreen from "./screens/TaskManagementScreen";
+import TaskScreen from "./screens/TaskScreen";
+import { Text, TouchableOpacity } from "react-native";
+import HeaderComponent from "./components/HeaderComponent";
+import { Provider } from "react-redux";
+import store from "./redux/store";
+const Stack = createNativeStackNavigator();
 
-
-import ReduxScreen from './redux';
-import ReduxToolkitScreen from './reduxToolkitScreen';
-const Stack = createStackNavigator();
-function Home({navigation}){
-  return(
-    <View style={styles.container}>
-      <Text style={styles.title}>Choose an Option</Text>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Redux')}>
-        <Text style={styles.buttonText}>REDUX</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Redux Toolkit')}>
-        <Text style={styles.buttonText}>REDUX TOOL KIT</Text>
-      </TouchableOpacity>
-    </View>
-  );
-}
 export default function App() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={Home} options = {{headerShown:true}}/>
-        <Stack.Screen name="Redux" component={ReduxScreen} options = {{headerShown:true}}/>
-        <Stack.Screen name="ReduxToolkitScreen" component={ReduxToolkitScreen} options = {{headerShown:true}}/>
-        {/* <Stack.Screen name="Redux Toolkit" component={ReduxScreen} /> */}
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+    return (
+        <Provider store={store}>
+            <NavigationContainer>
+                <Stack.Navigator
+                    screenOptions={({ navigation, route }) => ({
+                        headerLeft: () => {
+                            return (
+                                <TouchableOpacity
+                                    style={{ padding: 5 }}
+                                    onPress={() => {
+                                        navigation.goBack();
+                                    }}
+                                >
+                                    <Text style={{ fontSize: 25 }}>&larr;</Text>
+                                </TouchableOpacity>
+                            );
+                        },
+                        headerRight: () => <HeaderComponent username={route.params?.username} />,
+                        title: ""
+                    })}
+                >
+                    <Stack.Screen name="TaskManagement" component={TaskManagementScreen} />
+                    <Stack.Screen name="Task" component={TaskScreen} />
+                </Stack.Navigator>
+            </NavigationContainer>
+        </Provider>
+    );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 24,
-    marginBottom: 20,
-    fontWeight: 'bold',
-  },
-  button: {
-    margin: 10,
-    padding: 10,
-    backgroundColor: '#007BFF',
-    borderRadius: 5,
-  },
-  buttonText: {
-    color: '#fff',
-    fontSize: 18,
-  },
-});
