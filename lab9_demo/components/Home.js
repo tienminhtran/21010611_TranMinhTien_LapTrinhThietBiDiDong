@@ -8,7 +8,7 @@ import {
   Image,
 } from 'react-native';
 
-const ScreenHome = ({ navigation }) => {
+const Home = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.screen}>
       <Text style={styles.descriptionText}>
@@ -112,4 +112,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ScreenHome;
+export default Home;

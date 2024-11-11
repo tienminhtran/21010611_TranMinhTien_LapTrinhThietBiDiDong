@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import { addBike } from './features/bikes/bikesSlice';
 
-const ScreenAddBike = ({ navigation }) => {
+const AddBike = ({ navigation }) => {
   const [name, setName] = useState('');
   const [price, setPrice] = useState('');
   const [category, setCategory] = useState('');
@@ -121,4 +121,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ScreenAddBike;
+export default AddBike;

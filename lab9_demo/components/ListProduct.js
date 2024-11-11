@@ -12,7 +12,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import Item1 from './Item1';
 import { fetchBikes } from './features/bikes/bikesSlice';
 
-const ScreenListProduct = ({ navigation }) => {
+const ListProduct = ({ navigation }) => {
   const dispatch = useDispatch();
   const { items: bikes, status } = useSelector((state) => state.bikes);
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -179,4 +179,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ScreenListProduct;
+export default ListProduct;

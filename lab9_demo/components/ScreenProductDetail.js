@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity, SafeAreaView, StyleSheet } from 'react-native';
 
-const ScreenProductDetail = ({ route }) => {
+const ProductDetail = ({ route }) => {
   const { product } = route.params;
 
   return (
@@ -114,4 +114,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ScreenProductDetail;
+export default ProductDetail;
