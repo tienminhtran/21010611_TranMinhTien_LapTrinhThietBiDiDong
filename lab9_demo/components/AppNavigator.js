@@ -13,10 +13,14 @@ export default function AppNavigator() {
     <NavigationContainer>
       <Stack.Navigator>
         {/* chuyển trang HOME */}
-        <Stack.Screen name="Home" component={ScreenHome} />
-
+<Stack.Screen
+  name="Home"
+  component={ScreenHome}
+  options={{ headerShown: true, title: 'Home' }}
+/>
         {/* chuyển trang LIST */}
-        <Stack.Screen name="List" component={ScreenListProduct} />
+        <Stack.Screen name="List" component={ScreenListProduct}   options={{ headerShown: true, title: 'Home' }}
+ />
 
         {/* chuyển trang DETAIL */}
         <Stack.Screen name="Detail" component={ScreenProductDetail} />
