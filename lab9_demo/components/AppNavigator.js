@@ -4,7 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ScreenHome from './ScreenHome';
 import ScreenListProduct from './ScreenListProduct';
 import ScreenProductDetail from './ScreenProductDetail';
-import ScreenAddBike from './ScreenAddBike';
+import ScreenAddBike from './ScreenAddBike.js';
 
 const Stack = createNativeStackNavigator();
 
