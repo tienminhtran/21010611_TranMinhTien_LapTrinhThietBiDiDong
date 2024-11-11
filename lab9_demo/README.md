@@ -1,3 +1,8 @@
+<h1>Minh chứng</h1>
+
+> [!IMPORTANT]
+> ![minhchung]([https://github.com/user-attachments/assets/c8d89c7c-2270-41ca-967d-6670dc3fad4a](https://github.com/tienminhtran/21010611_TranMinhTien_LapTrinhThietBiDiDong/blob/main/lab9_demo/minhchung/clip-demo.mp4)
+
 # redux API (TODO APP lay tu api display len)
 # redux SAGAR  (CRUD)
 # https://67150c8133bc2bfe40b93603.mockapi.io/xedap
