@@ -125,5 +125,19 @@ https://rapidapi.com/guides/fetch-api-react-native
 
 https://www.figma.com/design/bJ1zR7MlDRDOfTNTnyE7F2/Lab_07_a?node-id=0-...EZbXec-0
 
-  
+  npx expo install expo-upgrade
+npm install --global expo-cli
+
+
+npm install react-native-web@~0.19.6
+
+
+npm install @react-navigation/native-stack
+npm install @react-navigation/stack
+npm install @react-navigation/native
+
+
+
+1. Cài đặt react-redux
+npm install react-redux @reduxjs/toolkit
   
