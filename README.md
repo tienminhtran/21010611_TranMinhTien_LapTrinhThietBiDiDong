@@ -15,6 +15,11 @@ https://rapidapi.com/guides/fetch-api-react-native
 
   //npm install -g expo-cli
 # tạo project
+
+	npx create-expo-app fontend --template blank-typescript
+
+
+ ###############################
 ## cách 1
 	npx create-expo-app demo_app --template expo-template-blank-typescript
 ## cách 2
