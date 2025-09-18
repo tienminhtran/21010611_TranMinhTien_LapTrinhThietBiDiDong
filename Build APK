@@ -1,0 +1,28 @@
+#!/bin/bash
+# Script build và cài đặt APK bằng EAS Build
+
+# 1. Đăng nhập Expo (chỉ cần 1 lần)
+eas login
+
+# 2. Tạo file eas.json với cấu hình APK
+cat > eas.json <<EOL
+{
+  "build": {
+    "preview": {
+      "android": {
+        "buildType": "apk"
+      }
+    },
+    "production": {}
+  }
+}
+EOL
+
+# 3. Chạy build APK
+      
+  eas build -p android --profile preview
+
+# 4. Sau khi build xong, có thể cài trực tiếp vào emulator
+# (chạy thêm lệnh dưới nếu muốn tự động install)
+
+    eas build:run -p android --latest
